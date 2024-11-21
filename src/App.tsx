@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import Thing from './others/Thing';
+import MyButton from './components/MyButton';
 
-function App() {
+const App = () => {
+
+  const [things, setThings] = useState<Thing[]>([
+    new Thing("Item -2", -2),
+    new Thing("Item -1", -1),
+    new Thing("Item 0", 0),
+  ]);
+
+  const listThings = things.map(thing =>
+  <li key={thing.id}>
+    {thing.text}
+  </li>);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Hejsa</h1>
+      <MyButton text="Wow" things={things} setThings={setThings}/>
+      <ul>
+        {listThings}
+      </ul>
+    </>
   );
 }
 
