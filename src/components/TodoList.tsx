@@ -14,6 +14,7 @@ const TodoList: React.FC = () => {
 
     return (
         <>
+            <h1 className="text-3xl font-bold underline">Todo list</h1>
             <TodoForm onAddTask={addTask} />
             <ListOfTasks tasks={tasks}/>
         </>

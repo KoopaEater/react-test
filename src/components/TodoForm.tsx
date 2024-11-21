@@ -23,7 +23,7 @@ const TodoForm: React.FC<TodoFormProps> = ({onAddTask}) => {
     return (
         <>
             <input type="text" name="new-task" id="new-task" value={inputValue} onChange={handleInputChange} />
-            <button onClick={addTask}>Add task</button>
+            <button className="btn btn-blue" onClick={addTask}>Add task</button>
         </>
     );
 }
