@@ -15,7 +15,7 @@ const ListOfTasks: React.FC<ListOfTasksProps> = ({tasks}) => {
     );
 
     return (
-        <ul>
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
             {listTasks}
         </ul>
     );
